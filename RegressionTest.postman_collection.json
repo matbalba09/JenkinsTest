@@ -1,0 +1,624 @@
+{
+	"info": {
+		"_postman_id": "ae6ea84a-e177-4175-81ba-79935e0f5909",
+		"name": "RegressionTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14608331"
+	},
+	"item": [
+		{
+			"name": "Funder",
+			"item": [
+				{
+					"name": "Funder/Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"funderId\", \r",
+									"    jsonData.data.funder_id);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var randAddressId = \"{{$randomInt}}\" + \"{{$randomInt}}\";\r",
+									"pm.collectionVariables.set(\"addressId\", randAddressId);\r",
+									"\r",
+									"var rand = \"testName\" + \"{{$randomInt}}\" + \"{{$randomInt}}\";\r",
+									"pm.collectionVariables.set(\"name\", rand);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"{{name}}\",\r\n  \"emms1_funder_id\": 0,\r\n  \"address_id\": {{addressId}},\r\n  \"display_name\": \"string\",\r\n  \"abn\": \"string\",\r\n  \"is_securitised\": true,\r\n  \"simulator_priority\": 0,\r\n  \"exchange_url\": \"string\",\r\n  \"assessment_rate\": 0,\r\n  \"funder_short_name\": \"string\",\r\n  \"is_provisional\": true,\r\n  \"cashflow_active\": true,\r\n  \"income_variance_no\": 0,\r\n  \"min_new_loan_amount\": 0,\r\n  \"min_increase_loan_amount\": 0,\r\n  \"min_new_split_amount\": 0,\r\n  \"min_increase_split_amount\": 0,\r\n  \"simulator_active\": true,\r\n  \"default_loan_term\": 0,\r\n  \"has_funder_reference_number\": true,\r\n  \"is_commerical\": true,\r\n  \"upfront_rate_in\": 0,\r\n  \"month_ok\": true,\r\n  \"month_payment_checked\": true,\r\n  \"upfront_rate_out\": 0,\r\n  \"is_shit\": true,\r\n  \"bsb_in\": \"string\",\r\n  \"bsb_out\": \"string\",\r\n  \"allow_post_settlement_account_number_update\": true,\r\n  \"valex_Funder_Id\": \"string\",\r\n  \"eib_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-api.mortgagehouse.com.au/administrationservice/v1/Funder/Create",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"mortgagehouse",
+								"com",
+								"au"
+							],
+							"path": [
+								"administrationservice",
+								"v1",
+								"Funder",
+								"Create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Funder/Read",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev-api.mortgagehouse.com.au/administrationservice/v1/Funder/Read?FunderId={{funderId}}",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"mortgagehouse",
+								"com",
+								"au"
+							],
+							"path": [
+								"administrationservice",
+								"v1",
+								"Funder",
+								"Read"
+							],
+							"query": [
+								{
+									"key": "FunderId",
+									"value": "{{funderId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Funder/ReadAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev-api.mortgagehouse.com.au/administrationservice/v1/Funder/ReadAll",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"mortgagehouse",
+								"com",
+								"au"
+							],
+							"path": [
+								"administrationservice",
+								"v1",
+								"Funder",
+								"ReadAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Funder/Update",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"{{name}}\",\r\n  \"emms1_funder_id\": 0,\r\n  \"address_id\": {{addressId}},\r\n  \"display_name\": \"test display_name 01\",\r\n  \"active\": true,\r\n  \"abn\": \"string\",\r\n  \"is_securitised\": true,\r\n  \"simulator_priority\": 0,\r\n  \"exchange_url\": \"string\",\r\n  \"assessment_rate\": 0,\r\n  \"funder_short_name\": \"string\",\r\n  \"is_provisional\": true,\r\n  \"cashflow_active\": true,\r\n  \"income_variance_no\": 0,\r\n  \"min_new_loan_amount\": 0,\r\n  \"min_increase_loan_amount\": 0,\r\n  \"min_new_split_amount\": 0,\r\n  \"min_increase_split_amount\": 0,\r\n  \"simulator_active\": true,\r\n  \"default_loan_term\": 0,\r\n  \"has_funder_reference_number\": true,\r\n  \"is_commerical\": true,\r\n  \"upfront_rate_in\": 0,\r\n  \"month_ok\": true,\r\n  \"month_payment_checked\": true,\r\n  \"upfront_rate_out\": 0,\r\n  \"is_shit\": true,\r\n  \"bsb_in\": \"string\",\r\n  \"bsb_out\": \"string\",\r\n  \"allow_post_settlement_account_number_update\": true,\r\n  \"valex_Funder_Id\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-api.mortgagehouse.com.au/administrationservice/v1/Funder/Update?FunderId={{funderId}}",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"mortgagehouse",
+								"com",
+								"au"
+							],
+							"path": [
+								"administrationservice",
+								"v1",
+								"Funder",
+								"Update"
+							],
+							"query": [
+								{
+									"key": "FunderId",
+									"value": "{{funderId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Funder/Disable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://dev-api.mortgagehouse.com.au/administrationservice/v1/Funder/Disable?FunderId={{funderId}}",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"mortgagehouse",
+								"com",
+								"au"
+							],
+							"path": [
+								"administrationservice",
+								"v1",
+								"Funder",
+								"Disable"
+							],
+							"query": [
+								{
+									"key": "FunderId",
+									"value": "{{funderId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lender",
+			"item": [
+				{
+					"name": "Lender/Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"lenderId\", \r",
+									"    jsonData.data.lender_id);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var rand = \"test Description\" + \"{{$randomInt}}\" + \"{{$randomInt}}\";\r",
+									"pm.collectionVariables.set(\"description\", rand);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"{{description}}\",\r\n  \"acn\": \"test acn01\",\r\n  \"acl\": \"test acl01\",\r\n  \"phoneNumber\": \"test phoneNumber01\",\r\n  \"website\": \"test website01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-api.mortgagehouse.com.au/administrationservice/v1/Lender/Create",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"mortgagehouse",
+								"com",
+								"au"
+							],
+							"path": [
+								"administrationservice",
+								"v1",
+								"Lender",
+								"Create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lender/Read",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev-api.mortgagehouse.com.au/administrationservice/v1/Lender/Read?LenderId={{lenderId}}",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"mortgagehouse",
+								"com",
+								"au"
+							],
+							"path": [
+								"administrationservice",
+								"v1",
+								"Lender",
+								"Read"
+							],
+							"query": [
+								{
+									"key": "LenderId",
+									"value": "{{lenderId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lender/ReadAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev-api.mortgagehouse.com.au/administrationservice/v1/Lender/ReadAll",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"mortgagehouse",
+								"com",
+								"au"
+							],
+							"path": [
+								"administrationservice",
+								"v1",
+								"Lender",
+								"ReadAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lender/Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"{{description}}\",\r\n  \"acn\": \"test acn 01\",\r\n  \"acl\": \"test acl 01\",\r\n  \"phoneNumber\": \"test phoneNumber 01\",\r\n  \"website\": \"test website 01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-api.mortgagehouse.com.au/administrationservice/v1/Lender/Update?LenderId={{lenderId}}",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"mortgagehouse",
+								"com",
+								"au"
+							],
+							"path": [
+								"administrationservice",
+								"v1",
+								"Lender",
+								"Update"
+							],
+							"query": [
+								{
+									"key": "LenderId",
+									"value": "{{lenderId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lender/Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://dev-api.mortgagehouse.com.au/administrationservice/v1/Lender/Delete?LenderId={{lenderId}}",
+							"protocol": "https",
+							"host": [
+								"dev-api",
+								"mortgagehouse",
+								"com",
+								"au"
+							],
+							"path": [
+								"administrationservice",
+								"v1",
+								"Lender",
+								"Delete"
+							],
+							"query": [
+								{
+									"key": "LenderId",
+									"value": "{{lenderId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "addressId",
+			"value": ""
+		},
+		{
+			"key": "name",
+			"value": ""
+		},
+		{
+			"key": "funderId",
+			"value": ""
+		},
+		{
+			"key": "description",
+			"value": ""
+		},
+		{
+			"key": "lenderId",
+			"value": ""
+		}
+	]
+}
