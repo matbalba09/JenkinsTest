@@ -1,7 +1,9 @@
 pipeline {
     
     agent any
-        
+    
+    tools {Nodejs "Newman"}
+    
     stages {
         
         stage ('Clean workspace') {
@@ -10,10 +12,11 @@ pipeline {
             }
         }
         
-        stage("Newman Run") {
+        stage("tests") {
         
             steps {
-                sh 'npm install'
+                sh 'node -v'
+                sh 'npm -v'
             }   
         }
     }
