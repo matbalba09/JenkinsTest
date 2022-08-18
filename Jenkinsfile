@@ -1,9 +1,7 @@
 pipeline {
     
     agent any
-    
-    tools nodejs "Newman"
-    
+        
     stages {
         
         stage ('Clean workspace') {
