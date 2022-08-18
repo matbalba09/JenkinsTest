@@ -14,7 +14,7 @@ pipeline {
         stage("test") {
         
             steps {
-                sh "newman run RegressionTest.postman_collection.json"
+                sh 'newman run RegressionTest.postman_collection.json'
             }   
         }
         
