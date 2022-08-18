@@ -6,10 +6,16 @@ pipeline {
     
     stages {
         
+        stage ('Clean workspace') {
+            steps {
+                cleanWs()
+            }
+        }
+        
         stage("Newman Run") {
         
             steps {
-                sh 'newman run RegressionTest.postman_collection.json'
+                sh 'newman run "RegressionTest.postman_collection.json"'
             }   
         }
     }
