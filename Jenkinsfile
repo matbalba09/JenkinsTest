@@ -5,8 +5,13 @@ pipeline {
     tools {nodejs "Newman"}
     
     stages {
-    
-
+        
+        stage("Install newman") {
+        
+            steps {
+                sh 'npm install -g newman'
+            }   
+        }
         
         stage("test") {
         
