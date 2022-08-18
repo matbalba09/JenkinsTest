@@ -2,12 +2,14 @@ pipeline {
     
     agent any
     
+    tools {nodejs "{node.newman}"}
+    
     stages {
     
-        stage("build") {
+        stage("Install Newman") {
         
             steps {
-                echo 'building the application...'
+                sh 'npm install -g newman'
             }   
         }
         
