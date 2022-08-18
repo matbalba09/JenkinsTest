@@ -6,10 +6,10 @@ pipeline {
     
     stages {
         
-        stage("Install newman") {
+        stage("Newman Run") {
         
             steps {
-                sh 'npm install'
+                sh 'newman run RegressionTest.postman_collection.json'
             }   
         }
     }
