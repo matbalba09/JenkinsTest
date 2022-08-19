@@ -1,10 +1,6 @@
 pipeline {
     
-    agent {
-        docker { 
-            image 'postman/newman_ubuntu1404:2.1.2'
-        }
-    }
+    agent any
     
     stages {
         
@@ -14,7 +10,7 @@ pipeline {
             }
         }
         
-        stage("tests") {
+        stage("versions") {
         
             steps {
                 sh 'node -v'
@@ -26,6 +22,14 @@ pipeline {
         
             steps {
                 sh 'newman -u https://www.getpostman.com/collections/75b745addfbaa60a7121;'
+            }
+        }
+
+        node('ts-build') {
+            def collectionName = 'https://www.getpostman.com/collections/75b745addfbaa60a7121'
+            docker.image('postman/newman_ubuntu1404').inside("--entrypoint=''")
+            {
+                sh "newman run '$collectionName'"
             }
         }
     }
