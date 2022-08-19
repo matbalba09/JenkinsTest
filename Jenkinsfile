@@ -26,10 +26,9 @@ pipeline {
         }
 
         node('ts-build') {
-            def collectionName = 'https://www.getpostman.com/collections/75b745addfbaa60a7121'
             docker.image('postman/newman_ubuntu1404').inside("--entrypoint=''")
             {
-                sh "newman run '$collectionName'"
+                sh "newman run 'https://www.getpostman.com/collections/75b745addfbaa60a7121'"
             }
         }
     }
