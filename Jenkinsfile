@@ -1,8 +1,10 @@
 pipeline {
     
-    agent any
-    
-    tools {Nodejs "Newman"}
+    agent {
+        docker { 
+            image 'postman/newman_ubuntu1404:2.1.2'
+        }
+    }
     
     stages {
         
@@ -17,8 +19,14 @@ pipeline {
             steps {
                 sh 'node -v'
                 sh 'npm -v'
-                
             }   
+        }
+        
+        stage("tests") {
+        
+            steps {
+                sh 'newman -u https://www.getpostman.com/collections/75b745addfbaa60a7121;'
+            }
         }
     }
 }
