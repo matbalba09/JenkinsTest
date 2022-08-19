@@ -24,12 +24,5 @@ pipeline {
                 sh 'newman -u https://www.getpostman.com/collections/75b745addfbaa60a7121;'
             }
         }
-
-        node('ts-build') {
-            docker.image('postman/newman_ubuntu1404').inside("--entrypoint=''")
-            {
-                sh "newman run 'https://www.getpostman.com/collections/75b745addfbaa60a7121'"
-            }
-        }
     }
 }
