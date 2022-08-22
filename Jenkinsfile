@@ -12,7 +12,7 @@ pipeline {
         
         stage ('Git Checkout') {
             steps {
-                git branch: "develop", url: "https://github.com/matbalba09/JenkinsTest.git"
+                git branch: "dev", url: "https://github.com/matbalba09/JenkinsTest.git"
             }
         }
         
