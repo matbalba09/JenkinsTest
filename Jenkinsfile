@@ -2,11 +2,8 @@ pipeline {
     
     agent any
     
-    tools {
-        nodejs
-        {
-            "Newman"
-        }
+    node {
+        env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
     }
     
     stages {
