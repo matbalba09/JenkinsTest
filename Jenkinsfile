@@ -10,10 +10,23 @@ pipeline {
             }
         }
         
+        stage ('Git Checkout') {
+            steps {
+                git branch: "develop", url: "https://github.com/matbalba09/JenkinsTest.git"
+            }
+        }
+        
         stage("npm install") {
         
             steps {
-                sh "npm config ls"
+                sh "npm install"
+            }   
+        }
+        
+        stage("npm install") {
+        
+            steps {
+                sh "npm install"
             }   
         }
         
