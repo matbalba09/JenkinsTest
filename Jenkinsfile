@@ -16,7 +16,7 @@ pipeline {
         
             steps {
                 sh 'npm install'
-                sh 'npm install newman'
+                sh 'npm install -g newman'
             }   
         }
         
