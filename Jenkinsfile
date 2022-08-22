@@ -2,10 +2,6 @@ pipeline {
     
     agent any
     
-    node {
-        env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
-    }
-    
     stages {
         
         stage ('Clean workspace') {
@@ -17,7 +13,7 @@ pipeline {
         stage("npm install") {
         
             steps {
-                sh "npm install"
+                sh "npm config ls"
             }   
         }
         
