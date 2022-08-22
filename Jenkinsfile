@@ -2,6 +2,8 @@ pipeline {
     
     agent any
     
+    tools {nodejs "Newman"}
+    
     stages {
         
         stage ('Clean workspace') {
@@ -10,31 +12,26 @@ pipeline {
             }
         }
         
-        stage ('Git Checkout') {
-            steps {
-                git branch: "dev", url: "https://github.com/matbalba09/JenkinsTest.git"
-            }
-        }
-        
-        stage("npm install") {
+        stage("Install newman") {
         
             steps {
-                sh "npm install"
+                sh 'npm install'
+                sh 'npm install newman'
             }   
         }
         
-        stage("npm install") {
+        stage("test") {
         
             steps {
-                sh "npm install"
+                sh 'newman run https://www.getpostman.com/collections/75b745addfbaa60a7121'
             }   
         }
         
-        stage("tests") {
+        stage("deploy") {
         
             steps {
-                sh "newman run https://www.getpostman.com/collections/75b745addfbaa60a7121"
-            }
+                echo 'deploying the application...'
+            }   
         }
     }
 }
