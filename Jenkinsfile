@@ -1,23 +1,29 @@
 pipeline {
+
     agent any
     
-    tools {
-        nodejs {'Newman'}
-    }
-    
     stages {
-     
-
-        
-        stage ('Checkout') {
+       
+        stage('Clean Workspace'){
             steps {
-                checkout scm
+            cleanWs()
+            }
+        }
+         
+        stage('Checkout'){
+            steps {
+                checkout([$class: 'GitSCM',
+                branches: [[name: '*/master']],
+                doGenerateSubmoduleConfigurations: false,
+                extensions: [],
+                submoduleCfg: [],
+                userRemoteConfigs: [[url: 'https://github.com/matbalba09/JenkinsTest.git']]])
             }
         }
         
-        stage('Newman Postman Test') {
+    	stage('run Test newman') {
             steps {
-                bat 'newman run PostmanTest/RegressionTest.postman_collection.json -e PostmanTest/DevApi.postman_environment.json --disable-unicode'
+                bat 'newman run PostmanTest//RegressionTest.postman_collection.json -e PostmanTest//env//DevApi.postman_environment.json --disable-unicode'
             }
         }
     }
