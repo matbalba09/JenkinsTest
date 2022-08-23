@@ -18,7 +18,7 @@ pipeline {
         
     	stage('run Test newman') {
             steps {
-                bat 'newman run PostmanTest/RegressionTest.postman_collection.json -e PostmanTest/DevApi.postman_environment.json --disable-unicode'
+                bat 'newman run PostmanTest/RegressionTest.postman_collection.json -e PostmanTest/DevApi.postman_environment.json -r junit,html --reporter-junit-export var/reports/newman/junit/newman.xml --reporter-html-export var/reports/newman/html/index.html --disable-unicode'
             }
         }
     }
