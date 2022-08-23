@@ -2,19 +2,12 @@ pipeline {
     agent any
     
     tools {
-        nodejs
-        {
-            'Newman'
-        }
+        nodejs {'Newman'}
     }
     
     stages {
      
-        stage ('Clean workspace') {
-            steps {
-                cleanWs()
-            }
-        }
+
         
         stage ('Checkout') {
             steps {
@@ -22,9 +15,9 @@ pipeline {
             }
         }
         
-        stage('Test') {
+        stage('Newman Postman Test') {
             steps {
-                bat 'newman run PostmanTest/RegressionTest.postman_collection.json -e PostmanTest/DevApi.postman_environment.json'
+                bat 'newman run PostmanTest/RegressionTest.postman_collection.json -e PostmanTest/DevApi.postman_environment.json --disable-unicode'
             }
         }
     }
