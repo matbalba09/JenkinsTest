@@ -1,28 +1,17 @@
 pipeline {
-    
-    agent any
-    
+    agent { label 'LinuxSlave' }
     stages {
-    
-        stage("build") {
-        
+        stage ('Checkout') {
             steps {
-                echo 'building the application...'
-            }   
+                checkout scm
+            }
         }
-        
-        stage("test") {
-        
+        stage('Test'){
             steps {
-                echo 'testing the application...'
-            }   
-        }
-        
-        stage("deploy") {
-        
-            steps {
-                echo 'deploying the application...'
-            }   
+                sh 'npm install'
+                sh 'npm run https://www.getpostman.com/collections/a27f66d0a51674259a0d'
+                junit 'newman.xml'
+            }
         }
     }
 }
