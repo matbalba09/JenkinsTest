@@ -8,13 +8,13 @@ pipeline {
         }
     }
     
-    stage ('Clean workspace') {
+    stages {
+     
+        stage ('Clean workspace') {
             steps {
                 cleanWs()
             }
         }
-    
-    stages {
         
         stage ('Checkout') {
             steps {
