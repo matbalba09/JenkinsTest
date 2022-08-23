@@ -8,17 +8,17 @@ pipeline {
         }
     }
     
+    stage ('Clean workspace') {
+            steps {
+                cleanWs()
+            }
+        }
+    
     stages {
         
         stage ('Checkout') {
             steps {
                 checkout scm
-            }
-        }
-        
-        stage ('Clean workspace') {
-            steps {
-                cleanWs()
             }
         }
         
