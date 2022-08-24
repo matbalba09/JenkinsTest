@@ -1,0 +1,2176 @@
+{
+	"info": {
+		"_postman_id": "df37b781-7b79-41b8-b4cd-66063a150ce8",
+		"name": "DocStoreService ENV RegressionTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14608331"
+	},
+	"item": [
+		{
+			"name": "BusinessService",
+			"item": [
+				{
+					"name": "BusinessService/Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"businessServiceId\", \r",
+									"    jsonData.businessService.businessServiceId);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"test name 01\",\r\n  \"description\": \"test description 01\",\r\n  \"obuaId\": 12345,\r\n  \"startDate\": \"2023-08-10T02:04:46.849Z\",\r\n  \"finishDate\": \"2025-08-10T02:04:46.849Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/BusinessService/Create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"BusinessService",
+								"Create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BusinessService/Read",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/BusinessService/Read?businessServiceId={{businessServiceId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"BusinessService",
+								"Read"
+							],
+							"query": [
+								{
+									"key": "businessServiceId",
+									"value": "{{businessServiceId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BusinessService/ReadAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/BusinessService/ReadAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"BusinessService",
+								"ReadAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BusinessService/Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"obuaId\": 12345,\r\n  \"description\": \"test description 02\",\r\n  \"finishDate\": \"2025-08-10T02:10:17.628Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/BusinessService/Update?businessServiceId={{businessServiceId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"BusinessService",
+								"Update"
+							],
+							"query": [
+								{
+									"key": "businessServiceId",
+									"value": "{{businessServiceId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BusinessService/Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/BusinessService/Delete?businessServiceId={{businessServiceId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"BusinessService",
+								"Delete"
+							],
+							"query": [
+								{
+									"key": "businessServiceId",
+									"value": "{{businessServiceId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BusinessService/getFileTypesUsingBizSvcsId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/BusinessService/getFileTypesUsingBizSvcsId?businessServiceId=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"BusinessService",
+								"getFileTypesUsingBizSvcsId"
+							],
+							"query": [
+								{
+									"key": "businessServiceId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BusinessService/linkFileType",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"businessServiceId\": 4,\r\n  \"fileTypeId\": 2,\r\n  \"obuaId\": 12345,\r\n  \"startDate\": \"2023-08-10T02:15:15.275Z\",\r\n  \"finishDate\": \"2025-08-10T02:15:15.275Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/BusinessService/linkFileType",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"BusinessService",
+								"linkFileType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BusinessService/getDocTypesUsingBizSvcsId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/BusinessService/getDocTypesUsingBizSvcsId?businessServiceId=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"BusinessService",
+								"getDocTypesUsingBizSvcsId"
+							],
+							"query": [
+								{
+									"key": "businessServiceId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BusinessService/linkDocType",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"businessServiceId\": 4,\r\n  \"documentTypeId\": 1,\r\n  \"obuaId\": 12345,\r\n  \"startDate\": \"2023-08-10T02:19:07.480Z\",\r\n  \"finishDate\": \"2025-08-10T02:19:07.480Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/BusinessService/linkDocType",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"BusinessService",
+								"linkDocType"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "4fbdbae52011e354a110cb5bf36975db",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Document",
+			"item": [
+				{
+					"name": "Document/Create",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"documentMetaId\", \r",
+									"    jsonData.documentMeta.documentMetaId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ObuaId",
+									"value": "12345",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "DocumentTypeId",
+									"value": "1",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "BusinessServiceId",
+									"value": "1",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "Description",
+									"value": "test description 01",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "ExternalReference",
+									"value": "1",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "Data",
+									"contentType": "",
+									"type": "file",
+									"src": "sample.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/Document/Create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"Document",
+								"Create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Document/Read",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/Document/Read?documentMetaId={{documentMetaId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"Document",
+								"Read"
+							],
+							"query": [
+								{
+									"key": "documentMetaId",
+									"value": "{{documentMetaId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Document/ReadAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/Document/ReadAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"Document",
+								"ReadAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Document/Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ObuaId",
+									"value": "12345",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "Description",
+									"value": "test description 01",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "FinishDate",
+									"value": "2025-08-10T02:04:46.849Z",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "Data",
+									"type": "file",
+									"src": "sample.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/Document/Update?documentMetaId={{documentMetaId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"Document",
+								"Update"
+							],
+							"query": [
+								{
+									"key": "documentMetaId",
+									"value": "{{documentMetaId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Document/Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/Document/Delete?documentMetaId={{documentMetaId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"Document",
+								"Delete"
+							],
+							"query": [
+								{
+									"key": "documentMetaId",
+									"value": "{{documentMetaId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Document/UnDelete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/Document/UnDelete?documentMetaId={{documentMetaId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"Document",
+								"UnDelete"
+							],
+							"query": [
+								{
+									"key": "documentMetaId",
+									"value": "{{documentMetaId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Document/View",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/Document/View?documentMetaId={{documentMetaId}}&obuaId=12345",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"Document",
+								"View"
+							],
+							"query": [
+								{
+									"key": "documentMetaId",
+									"value": "{{documentMetaId}}"
+								},
+								{
+									"key": "obuaId",
+									"value": "12345"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Document/getDocMetasUsingExtRefId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/Document/getDocMetasUsingExtRefId?externalReferenceId=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"Document",
+								"getDocMetasUsingExtRefId"
+							],
+							"query": [
+								{
+									"key": "externalReferenceId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Document/Download",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/Document/Download?documentMetaId={{documentMetaId}}&obuaId=12345",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"Document",
+								"Download"
+							],
+							"query": [
+								{
+									"key": "documentMetaId",
+									"value": "{{documentMetaId}}"
+								},
+								{
+									"key": "obuaId",
+									"value": "12345"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DocumentType",
+			"item": [
+				{
+					"name": "DocumentType/Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"documentTypeId\", \r",
+									"    jsonData.documentType.documentTypeId);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var rand = \"testName\" + \"{{$randomInt}}\";\r",
+									"pm.variables.set(\"name\", rand);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"{{name}}\",\r\n  \"description\": \"test description 01\",\r\n  \"obuaId\": 12345,\r\n  \"startDate\": \"2023-08-10T03:06:13.771Z\",\r\n  \"finishDate\": \"2025-08-10T03:06:13.771Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/DocType/Create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"DocType",
+								"Create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DocumentType/Read",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/DocType/Read?documentTypeId={{documentTypeId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"DocType",
+								"Read"
+							],
+							"query": [
+								{
+									"key": "documentTypeId",
+									"value": "{{documentTypeId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DocumentType/ReadAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/DocType/ReadAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"DocType",
+								"ReadAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DocumentType/Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"obuaId\": 12345,\r\n  \"finishDate\": \"2025-08-10T03:07:36.440Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/DocType/Update?documentTypeId={{documentTypeId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"DocType",
+								"Update"
+							],
+							"query": [
+								{
+									"key": "documentTypeId",
+									"value": "{{documentTypeId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DocumentType/Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"  pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/DocType/Delete?documentTypeId={{documentTypeId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"DocType",
+								"Delete"
+							],
+							"query": [
+								{
+									"key": "documentTypeId",
+									"value": "{{documentTypeId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FileType",
+			"item": [
+				{
+					"name": "FileType/Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"fileTypeId\", \r",
+									"    jsonData.fileType.fileTypeId);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var rand = \"testName\" + \"{{$randomInt}}\";\r",
+									"pm.variables.set(\"name\", rand);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"{{name}}\",\r\n  \"obuaId\": 12345,\r\n  \"startDate\": \"2023-08-10T03:06:13.771Z\",\r\n  \"finishDate\": \"2025-08-10T03:06:13.771Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/FileType/Create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"FileType",
+								"Create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FileType/Read",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/FileType/Read?fileTypeId={{fileTypeId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"FileType",
+								"Read"
+							],
+							"query": [
+								{
+									"key": "fileTypeId",
+									"value": "{{fileTypeId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FileType/ReadAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/FileType/ReadAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"FileType",
+								"ReadAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FileType/Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"obuaId\": 12345,\r\n  \"finishDate\": \"2025-08-10T03:07:36.440Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/FileType/Update?fileTypeId={{fileTypeId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"FileType",
+								"Update"
+							],
+							"query": [
+								{
+									"key": "fileTypeId",
+									"value": "{{fileTypeId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FileType/Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"  pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/FileType/Delete?fileTypeId={{fileTypeId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"FileType",
+								"Delete"
+							],
+							"query": [
+								{
+									"key": "fileTypeId",
+									"value": "{{fileTypeId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health",
+			"item": [
+				{
+					"name": "Health/Heartbeat",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/Health/Heartbeat",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"Health",
+								"Heartbeat"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Message",
+			"item": [
+				{
+					"name": "Message/Create",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var rand = \"testCode\" + \"{{$randomInt}}\";\r",
+									"pm.variables.set(\"code\", rand);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"messageId\", \r",
+									"    jsonData.messageData.messageId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"code\": \"{{code}}\",\r\n  \"message\": \"test message 01\",\r\n  \"messageTypeId\": 2,\r\n  \"obuaId\": 12345,\r\n  \"startDate\": \"2023-08-10T03:17:56.353Z\",\r\n  \"finishDate\": \"2025-08-10T03:17:56.353Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/Message/Create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"Message",
+								"Create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Message/Read",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/Message/Read?messageId={{messageId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"Message",
+								"Read"
+							],
+							"query": [
+								{
+									"key": "messageId",
+									"value": "{{messageId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Message/ReadAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/Message/ReadAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"Message",
+								"ReadAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Message/Update",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"code\": \"{{code}}\",\r\n  \"message\": \"test message 01\",\r\n  \"messageTypeId\": 2,\r\n  \"obuaId\": 12345,\r\n  \"finishDate\": \"2025-08-10T03:19:00.635Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/Message/Update?messageId={{messageId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"Message",
+								"Update"
+							],
+							"query": [
+								{
+									"key": "messageId",
+									"value": "{{messageId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Message/Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"  pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/Message/Delete?messageId={{messageId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"Message",
+								"Delete"
+							],
+							"query": [
+								{
+									"key": "messageId",
+									"value": "{{messageId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MessageType",
+			"item": [
+				{
+					"name": "MessageType/Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"messageTypeId\", \r",
+									"    jsonData.messageType.messageTypeId);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var rand = \"testName\" + \"{{$randomInt}}\";\r",
+									"pm.variables.set(\"name\", rand);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"{{name}}\",\r\n  \"description\": \"test description 01\",\r\n  \"obuaId\": 13245,\r\n  \"startDate\": \"2023-08-10T03:23:16.204Z\",\r\n  \"finishDate\": \"2025-08-10T03:23:16.204Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/MessageType/Create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"MessageType",
+								"Create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MessageType/Read",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/MessageType/Read?messageTypeId={{messageTypeId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"MessageType",
+								"Read"
+							],
+							"query": [
+								{
+									"key": "messageTypeId",
+									"value": "{{messageTypeId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MessageType/ReadAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/MessageType/ReadAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"MessageType",
+								"ReadAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MessageType/Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"{{name}}\",\r\n  \"description\": \"test description 01\",\r\n  \"obuaId\": 13245,\r\n  \"finishDate\": \"2025-08-10T03:23:16.204Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/MessageType/Update?messageTypeId={{messageTypeId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"MessageType",
+								"Update"
+							],
+							"query": [
+								{
+									"key": "messageTypeId",
+									"value": "{{messageTypeId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MessageType/Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"  pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4fbdbae52011e354a110cb5bf36975db",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/MessageType/Delete?messageTypeId={{messageTypeId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"MessageType",
+								"Delete"
+							],
+							"query": [
+								{
+									"key": "messageTypeId",
+									"value": "{{messageTypeId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "documentMetaId",
+			"value": ""
+		},
+		{
+			"key": "businessServiceId",
+			"value": ""
+		},
+		{
+			"key": "documentTypeId",
+			"value": ""
+		},
+		{
+			"key": "fileTypeId",
+			"value": ""
+		},
+		{
+			"key": "messageId",
+			"value": ""
+		},
+		{
+			"key": "messageTypeId",
+			"value": ""
+		}
+	]
+}
