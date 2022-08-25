@@ -19,7 +19,7 @@ pipeline {
         stage("Install newman") {
         
             steps {
-                bat 'npm install -g newman'
+                bat 'npm install newman'
             }   
         }
         
