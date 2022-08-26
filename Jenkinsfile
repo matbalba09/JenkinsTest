@@ -25,14 +25,14 @@ pipeline {
         
         stage('AdminService Test') {
             steps {
-                bat 'newman run AdminService/RegressionTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json --disable-unicode'
+                bat 'newman run AdminService/RegressionTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json -r htmlextra'
             }
         }
         
-    	stage('DocStoreService Test') {
-            steps {
-                bat 'newman run DocStoreService/RegressionTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json --disable-unicode'
-            }
-        }
+//     	stage('DocStoreService Test') {
+//             steps {
+//                 bat 'newman run DocStoreService/RegressionTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json --disable-unicode'
+//             }
+//         }
     }
 }
