@@ -24,8 +24,12 @@ pipeline {
         }
         
         stage('AdminService Test') {
+//             steps {
+//                 bat 'newman run AdminService/RegressionTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json -reporters cli,junit,html --reporter-junit-export "newman/myreport.xml" --reporter-html-export :"newman/myHTMLreport.html"'
+//             }
+            
             steps {
-                bat 'newman run AdminService/RegressionTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json -reporters cli,junit,html --reporter-junit-export "newman/myreport.xml" --reporter-html-export :"newman/myHTMLreport.html"'
+                bat 'newman run AdminService/RegressionTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json --reporters cli,junit,htmlextra --reporter-junit-export "newman_result.xml" --reporter-htmlextra-export "newman_result.html"'
             }
         }
         
