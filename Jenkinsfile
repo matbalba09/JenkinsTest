@@ -16,12 +16,12 @@ pipeline {
             }
         }
         
-        stage("Install newman") {
+//         stage("Install newman") {
         
-            steps {
-                bat 'npm install newman'
-            }   
-        }
+//             steps {
+//                 bat 'npm install newman'
+//             }   
+//         }
         
         stage('AdminService Test') {
 //             steps {
