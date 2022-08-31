@@ -25,7 +25,7 @@ pipeline {
         
         stage('AdminService Test') {
             steps {
-                bat 'newman run AdminService/RegressionTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json --disable-unicode -r htmlextra --reporter-htmlextra-export ./results/report.html'
+                bat 'newman run AdminService/RegressionTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./results/report.html'
             }
             
             
