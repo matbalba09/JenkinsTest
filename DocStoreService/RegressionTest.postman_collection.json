@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "df37b781-7b79-41b8-b4cd-66063a150ce8",
-		"name": "DocStoreService ENV RegressionTest",
+		"name": "DocStoreService Test",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "14608331"
 	},
@@ -641,7 +641,7 @@
 											"key": "Data",
 											"contentType": "",
 											"type": "file",
-											"src": "/C:/Users/Mat/Downloads/document_to_create.pdf"
+											"src": "document_to_create.pdf"
 										}
 									]
 								},
@@ -1107,7 +1107,7 @@
 										{
 											"key": "Data",
 											"type": "file",
-											"src": "/C:/Users/Mat/Downloads/image_to_convert.png"
+											"src": "image_to_convert.png"
 										},
 										{
 											"key": "UploadBy",
@@ -1166,7 +1166,7 @@
 										{
 											"key": "Data",
 											"type": "file",
-											"src": "/C:/Users/Mat/Downloads/pdf_to_mask.pdf"
+											"src": "pdf_to_mask.pdf"
 										},
 										{
 											"key": "DocTypeId",
