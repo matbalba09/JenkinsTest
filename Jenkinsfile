@@ -41,7 +41,7 @@ pipeline {
         
         stage('DocStoreService Test') {
             steps {
-                bat 'newman run DocStoreService/RegressionTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json -r htmlextra'
+                bat 'newman run DocStoreService/RegressionTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json --disable-unicode'
 //                 bat 'newman run DocStoreService/RegressionTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./newman/docStoreService_report.html'
 
 //                 publishHTML (target: [
