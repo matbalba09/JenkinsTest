@@ -26,9 +26,7 @@ pipeline {
         stage('AdminService Test') {
             steps {
                 bat 'newman run AdminService/RegressionTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./results/report.html'
-            }
             
-            steps {
                 publishHTML (target: [
                 allowMissing: false, 
                 alwaysLinkToLastBuild: true, 
@@ -39,6 +37,7 @@ pipeline {
                 reportTitles: ''
                 ])
             }
+            
             
 //             steps {
 //                 bat 'newman run AdminService/RegressionTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json -reporters cli,junit,html --reporter-junit-export "newman/myreport.xml" --reporter-html-export :"newman/myHTMLreport.html"'
