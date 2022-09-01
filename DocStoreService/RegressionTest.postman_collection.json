@@ -641,7 +641,7 @@
 											"key": "Data",
 											"contentType": "",
 											"type": "file",
-											"src": "document"
+											"src": "document.pdf"
 
 										}
 									]
@@ -802,7 +802,7 @@
 										{
 											"key": "Data",
 											"type": "file",
-											"src": "document"
+											"src": "document.pdf"
 										}
 									]
 								},
