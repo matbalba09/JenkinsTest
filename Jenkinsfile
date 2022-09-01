@@ -26,7 +26,6 @@ pipeline {
         stage('AdminService Test') {
             steps {
                 bat 'newman run AdminService/RegressionTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./newman/adminService_report.html'
-                bat 'newman run DocStoreService/RegressionTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./newman/docStoreService_report.html'
                 
                 publishHTML (target: [
                     allowMissing: false, 
@@ -37,6 +36,13 @@ pipeline {
                     reportName: 'adminService Newman HTML Report', 
                     reportTitles: ''
                 ])
+            }
+        }
+        
+        stage('DocStoreService Test') {
+            steps {
+                bat 'newman run DocStoreService/RegressionTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./newman/docStoreService_report.html'
+
                 publishHTML (target: [
                     allowMissing: false, 
                     alwaysLinkToLastBuild: true, 
