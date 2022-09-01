@@ -48,8 +48,8 @@ pipeline {
                     alwaysLinkToLastBuild: true, 
                     keepAll: false, 
                     reportDir: 'C:\\Users\\Mat\\.jenkins\\workspace\\tman_Test_Github_Pipeline3_dev_2\\newman', 
-                    reportFiles: 'docStoreService_report.html', 
-                    reportName: 'docStoreService Newman HTML Report', 
+                    reportFiles: 'report.html', 
+                    reportName: 'Newman HTML Report', 
                     reportTitles: ''
                 ])
             }
