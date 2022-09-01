@@ -23,21 +23,21 @@ pipeline {
 //             }   
 //         }
         
-        stage('AdminService Test') {
-            steps {
-                bat 'newman run AdminService/RegressionTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./newman/adminService_report.html'
+//         stage('AdminService Test') {
+//             steps {
+//                 bat 'newman run AdminService/RegressionTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./newman/adminService_report.html'
                 
-                publishHTML (target: [
-                    allowMissing: false, 
-                    alwaysLinkToLastBuild: true, 
-                    keepAll: false, 
-                    reportDir: 'C:\\Users\\Mat\\.jenkins\\workspace\\tman_Test_Github_Pipeline3_dev_2\\newman', 
-                    reportFiles: 'adminService_report.html', 
-                    reportName: 'adminService Newman HTML Report', 
-                    reportTitles: ''
-                ])
-            }
-        }
+//                 publishHTML (target: [
+//                     allowMissing: false, 
+//                     alwaysLinkToLastBuild: true, 
+//                     keepAll: false, 
+//                     reportDir: 'C:\\Users\\Mat\\.jenkins\\workspace\\tman_Test_Github_Pipeline3_dev_2\\newman', 
+//                     reportFiles: 'adminService_report.html', 
+//                     reportName: 'adminService Newman HTML Report', 
+//                     reportTitles: ''
+//                 ])
+//             }
+//         }
         
         stage('DocStoreService Test') {
             steps {
