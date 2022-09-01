@@ -641,7 +641,7 @@
 											"key": "Data",
 											"contentType": "",
 											"type": "file",
-											"src": "/C:/Users/Mat/Downloads/document_to_create.pdf"
+											"src": "/C:/Users/Mat/Downloads/document.pdf"
 										}
 									]
 								},
@@ -801,7 +801,7 @@
 										{
 											"key": "Data",
 											"type": "file",
-											"src": "sample.pdf"
+											"src": "/C:/Users/Mat/Downloads/document.pdf"
 										}
 									]
 								},
@@ -1147,6 +1147,19 @@
 						},
 						{
 							"name": "Document/MaskTFNPdf",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"auth": {
 									"type": "bearer",
