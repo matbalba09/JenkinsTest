@@ -31,7 +31,7 @@ pipeline {
                 allowMissing: false, 
                 alwaysLinkToLastBuild: true, 
                 keepAll: false, 
-                reportDir: 'C:\\Users\\Mat\\.jenkins\\workspace\\Newman_Reports\\results', 
+                reportDir: 'C:\Users\Mat\.jenkins\workspace\tman_Test_Github_Pipeline3_dev_2\results', 
                 reportFiles: 'report.html', 
                 reportName: 'Newman HTML Report', 
                 reportTitles: ''
