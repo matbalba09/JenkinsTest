@@ -28,14 +28,15 @@ pipeline {
                 bat 'newman run AdminService/RegressionTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./results/report.html'
             }
             
-            publishHTML([allowMissing: false, 
-                         alwaysLinkToLastBuild: true, 
-                         keepAll: false, 
-                         reportDir: 'C:\\Users\\Mat\\.jenkins\\workspace\\Newman_Reports\\results', 
-                         reportFiles: 'report.html', 
-                         reportName: 'Newman HTML Report', 
-                         reportTitles: ''
-                        ])
+            publishHTML (target: [
+                allowMissing: false, 
+                alwaysLinkToLastBuild: true, 
+                keepAll: false, 
+                reportDir: 'C:\\Users\\Mat\\.jenkins\\workspace\\Newman_Reports\\results', 
+                reportFiles: 'report.html', 
+                reportName: 'Newman HTML Report', 
+                reportTitles: ''
+            ])
             
             
 //             steps {
