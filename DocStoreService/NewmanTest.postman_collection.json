@@ -651,7 +651,7 @@
 											"key": "Data",
 											"contentType": "",
 											"type": "file",
-											"src": "DocStoreService\\document.pdf"
+											"src": "DocStoreService\\files\\document.pdf"
 										}
 									]
 								},
@@ -814,7 +814,7 @@
 										{
 											"key": "Data",
 											"type": "file",
-											"src": "document.pdf"
+											"src": "DocStoreService\\files\\document.pdf"
 										}
 									]
 								},
@@ -1126,7 +1126,7 @@
 										{
 											"key": "Data",
 											"type": "file",
-											"src": "image_to_convert.png"
+											"src": "DocStoreService\\files\\image_to_convert.png"
 										},
 										{
 											"key": "UploadBy",
@@ -1199,7 +1199,7 @@
 										{
 											"key": "Data",
 											"type": "file",
-											"src": "pdf_to_mask.pdf"
+											"src": "DocStoreService\\files\\pdf_to_mask.pdf"
 										},
 										{
 											"key": "DocTypeId",
