@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "df37b781-7b79-41b8-b4cd-66063a150ce8",
-		"name": "DocStoreService Test",
+		"name": "DocumentStoreService NewmanTest",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "14608331"
 	},
@@ -38,11 +38,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/v1/Health/Heartbeat",
+							"raw": "{{url}}/docstore/v1/Health/Heartbeat",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
+								"docstore",
 								"v1",
 								"Health",
 								"Heartbeat"
@@ -110,11 +111,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/v1/BusinessService/Create",
+									"raw": "{{url}}/docstore/v1/BusinessService/Create",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"BusinessService",
 										"Create"
@@ -164,11 +166,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/v1/BusinessService/Read?businessServiceId={{businessServiceId}}",
+									"raw": "{{url}}/docstore/v1/BusinessService/Read?businessServiceId={{businessServiceId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"BusinessService",
 										"Read"
@@ -212,11 +215,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/BusinessService/ReadAll",
+									"raw": "{{url}}/docstore/v1/BusinessService/ReadAll",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"BusinessService",
 										"ReadAll"
@@ -263,11 +267,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/v1/BusinessService/Update?businessServiceId={{businessServiceId}}",
+									"raw": "{{url}}/docstore/v1/BusinessService/Update?businessServiceId={{businessServiceId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"BusinessService",
 										"Update"
@@ -311,11 +316,12 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/BusinessService/Delete?businessServiceId={{businessServiceId}}",
+									"raw": "{{url}}/docstore/v1/BusinessService/Delete?businessServiceId={{businessServiceId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"BusinessService",
 										"Delete"
@@ -359,11 +365,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/BusinessService/getFileTypesUsingBizSvcsId?businessServiceId=1",
+									"raw": "{{url}}/docstore/v1/BusinessService/getFileTypesUsingBizSvcsId?businessServiceId=1",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"BusinessService",
 										"getFileTypesUsingBizSvcsId"
@@ -416,11 +423,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/v1/BusinessService/linkFileType",
+									"raw": "{{url}}/docstore/v1/BusinessService/linkFileType",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"BusinessService",
 										"linkFileType"
@@ -458,11 +466,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/BusinessService/getDocTypesUsingBizSvcsId?businessServiceId=1",
+									"raw": "{{url}}/docstore/v1/BusinessService/getDocTypesUsingBizSvcsId?businessServiceId=1",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"BusinessService",
 										"getDocTypesUsingBizSvcsId"
@@ -515,11 +524,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/v1/BusinessService/linkDocType",
+									"raw": "{{url}}/docstore/v1/BusinessService/linkDocType",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"BusinessService",
 										"linkDocType"
@@ -641,17 +651,17 @@
 											"key": "Data",
 											"contentType": "",
 											"type": "file",
-											"src": "document.pdf"
-
+											"src": "/C:/Users/Mat/Downloads/document.pdf"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{url}}/v1/Document/Create",
+									"raw": "{{url}}/docstore/v1/Document/Create",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"Document",
 										"Create"
@@ -689,11 +699,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Document/Read?documentMetaId={{documentMetaId}}",
+									"raw": "{{url}}/docstore/v1/Document/Read?documentMetaId={{documentMetaId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"Document",
 										"Read"
@@ -737,11 +748,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Document/ReadAll",
+									"raw": "{{url}}/docstore/v1/Document/ReadAll",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"Document",
 										"ReadAll"
@@ -802,16 +814,17 @@
 										{
 											"key": "Data",
 											"type": "file",
-											"src": "document.pdf"
+											"src": "/C:/Users/Mat/Downloads/document.pdf"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{url}}/v1/Document/Update?documentMetaId={{documentMetaId}}",
+									"raw": "{{url}}/docstore/v1/Document/Update?documentMetaId={{documentMetaId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"Document",
 										"Update"
@@ -855,11 +868,12 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Document/Delete?documentMetaId={{documentMetaId}}",
+									"raw": "{{url}}/docstore/v1/Document/Delete?documentMetaId={{documentMetaId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"Document",
 										"Delete"
@@ -903,11 +917,12 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Document/UnDelete?documentMetaId={{documentMetaId}}",
+									"raw": "{{url}}/docstore/v1/Document/UnDelete?documentMetaId={{documentMetaId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"Document",
 										"UnDelete"
@@ -951,11 +966,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Document/View?documentMetaId={{documentMetaId}}&obuaId=12345",
+									"raw": "{{url}}/docstore/v1/Document/View?documentMetaId={{documentMetaId}}&obuaId=12345",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"Document",
 										"View"
@@ -1003,11 +1019,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Document/getDocMetasUsingExtRefId?externalReferenceId=1",
+									"raw": "{{url}}/docstore/v1/Document/getDocMetasUsingExtRefId?externalReferenceId=1",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"Document",
 										"getDocMetasUsingExtRefId"
@@ -1051,11 +1068,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Document/Download?documentMetaId={{documentMetaId}}&obuaId=12345",
+									"raw": "{{url}}/docstore/v1/Document/Download?documentMetaId={{documentMetaId}}&obuaId=12345",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"Document",
 										"Download"
@@ -1108,7 +1126,7 @@
 										{
 											"key": "Data",
 											"type": "file",
-											"src": "image_to_convert.png"
+											"src": "/C:/Users/Mat/Downloads/image_to_convert.png"
 										},
 										{
 											"key": "UploadBy",
@@ -1133,11 +1151,12 @@
 									]
 								},
 								"url": {
-									"raw": "{{url}}/v1/Document/ConvertImageToPdf",
+									"raw": "{{url}}/docstore/v1/Document/ConvertImageToPdf",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"Document",
 										"ConvertImageToPdf"
@@ -1180,7 +1199,7 @@
 										{
 											"key": "Data",
 											"type": "file",
-											"src": "pdf_to_mask.pdf"
+											"src": "/C:/Users/Mat/Downloads/pdf_to_mask.pdf"
 										},
 										{
 											"key": "DocTypeId",
@@ -1190,11 +1209,12 @@
 									]
 								},
 								"url": {
-									"raw": "{{url}}/v1/Document/MaskTFNPdf",
+									"raw": "{{url}}/docstore/v1/Document/MaskTFNPdf",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"Document",
 										"MaskTFNPdf"
@@ -1260,11 +1280,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/v1/DocType/Create",
+									"raw": "{{url}}/docstore/api/v1/DocType/Create",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"api",
 										"v1",
 										"DocType",
@@ -1303,11 +1324,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/api/v1/DocType/Read?documentTypeId={{documentTypeId}}",
+									"raw": "{{url}}/docstore/api/v1/DocType/Read?documentTypeId={{documentTypeId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"api",
 										"v1",
 										"DocType",
@@ -1352,11 +1374,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/api/v1/DocType/ReadAll",
+									"raw": "{{url}}/docstore/api/v1/DocType/ReadAll",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"api",
 										"v1",
 										"DocType",
@@ -1404,11 +1427,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/v1/DocType/Update?documentTypeId={{documentTypeId}}",
+									"raw": "{{url}}/docstore/api/v1/DocType/Update?documentTypeId={{documentTypeId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"api",
 										"v1",
 										"DocType",
@@ -1453,11 +1477,12 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/api/v1/DocType/Delete?documentTypeId={{documentTypeId}}",
+									"raw": "{{url}}/docstore/api/v1/DocType/Delete?documentTypeId={{documentTypeId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"api",
 										"v1",
 										"DocType",
@@ -1530,11 +1555,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/v1/FileType/Create",
+									"raw": "{{url}}/docstore/v1/FileType/Create",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"FileType",
 										"Create"
@@ -1572,11 +1598,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/FileType/Read?fileTypeId={{fileTypeId}}",
+									"raw": "{{url}}/docstore/v1/FileType/Read?fileTypeId={{fileTypeId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"FileType",
 										"Read"
@@ -1620,11 +1647,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/FileType/ReadAll",
+									"raw": "{{url}}/docstore/v1/FileType/ReadAll",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"FileType",
 										"ReadAll"
@@ -1671,11 +1699,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/v1/FileType/Update?fileTypeId={{fileTypeId}}",
+									"raw": "{{url}}/docstore/v1/FileType/Update?fileTypeId={{fileTypeId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"FileType",
 										"Update"
@@ -1719,11 +1748,12 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/FileType/Delete?fileTypeId={{fileTypeId}}",
+									"raw": "{{url}}/docstore/v1/FileType/Delete?fileTypeId={{fileTypeId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"FileType",
 										"Delete"
@@ -1795,11 +1825,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/v1/Message/Create",
+									"raw": "{{url}}/docstore/v1/Message/Create",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"Message",
 										"Create"
@@ -1837,11 +1868,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Message/Read?messageId={{messageId}}",
+									"raw": "{{url}}/docstore/v1/Message/Read?messageId={{messageId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"Message",
 										"Read"
@@ -1885,11 +1917,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Message/ReadAll",
+									"raw": "{{url}}/docstore/v1/Message/ReadAll",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"Message",
 										"ReadAll"
@@ -1945,11 +1978,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/v1/Message/Update?messageId={{messageId}}",
+									"raw": "{{url}}/docstore/v1/Message/Update?messageId={{messageId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"Message",
 										"Update"
@@ -1993,11 +2027,12 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Message/Delete?messageId={{messageId}}",
+									"raw": "{{url}}/docstore/v1/Message/Delete?messageId={{messageId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"Message",
 										"Delete"
@@ -2069,11 +2104,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/v1/MessageType/Create",
+									"raw": "{{url}}/docstore/v1/MessageType/Create",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"MessageType",
 										"Create"
@@ -2111,11 +2147,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/MessageType/Read?messageTypeId={{messageTypeId}}",
+									"raw": "{{url}}/docstore/v1/MessageType/Read?messageTypeId={{messageTypeId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"MessageType",
 										"Read"
@@ -2159,11 +2196,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/MessageType/ReadAll",
+									"raw": "{{url}}/docstore/v1/MessageType/ReadAll",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"MessageType",
 										"ReadAll"
@@ -2210,11 +2248,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/v1/MessageType/Update?messageTypeId={{messageTypeId}}",
+									"raw": "{{url}}/docstore/v1/MessageType/Update?messageTypeId={{messageTypeId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"MessageType",
 										"Update"
@@ -2258,11 +2297,12 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/MessageType/Delete?messageTypeId={{messageTypeId}}",
+									"raw": "{{url}}/docstore/v1/MessageType/Delete?messageTypeId={{messageTypeId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"docstore",
 										"v1",
 										"MessageType",
 										"Delete"
@@ -2280,6 +2320,36 @@
 					]
 				}
 			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "4fbdbae52011e354a110cb5bf36975db",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	],
 	"variable": [
