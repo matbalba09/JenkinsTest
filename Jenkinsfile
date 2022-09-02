@@ -42,7 +42,7 @@ pipeline {
         stage('DocStoreService Test') {
             steps {
 //                 bat 'newman run DocStoreService/RegressionTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json --disable-unicode -r htmlextra'
-                bat 'newman run DocStoreService/DocStoreServiceTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./newman/docStoreService_report.html'
+                bat 'newman run DocStoreService/DocStoreServiceTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./newman/report.html'
 
                 publishHTML (target: [
                     allowMissing: false, 
