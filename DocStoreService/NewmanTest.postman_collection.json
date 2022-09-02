@@ -651,7 +651,7 @@
 											"key": "Data",
 											"contentType": "",
 											"type": "file",
-											"src": "document.pdf"
+											"src": "DocStoreService\\document.pdf"
 										}
 									]
 								},
