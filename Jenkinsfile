@@ -42,7 +42,7 @@ pipeline {
         stage('DocStoreService Test') {
             steps {
 //                 bat 'newman run DocStoreService/RegressionTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json --disable-unicode -r htmlextra'
-                bat 'newman run DocStoreService/DocStoreServiceTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./newman/report.html'
+                bat 'newman run DocStoreService/NewmanTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./newman/report.html'
 
                 publishHTML (target: [
                     allowMissing: false, 
@@ -58,13 +58,13 @@ pipeline {
         
 //         stage('AdminService Test') {
 //             steps {
-//                 bat 'newman run AdminService/AdminServiceTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json'
+//                 bat 'newman run AdminService/NewmanTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json'
 //             }
 //         }
         
 //         stage('AdminService Test') {
 //             steps {
-//                 bat 'newman run AdminService/AdminServiceTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./newman/report.html'
+//                 bat 'newman run AdminService/NewmanTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./newman/report.html'
                 
 //                 publishHTML (target: [
 //                     allowMissing: false, 
