@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "ae6ea84a-e177-4175-81ba-79935e0f5909",
+		"_postman_id": "2c25d431-47c0-408b-81dd-90d2e6509d35",
 		"name": "AdministrationService NewmanTest",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "14608331"
@@ -29,11 +29,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/v1/Health/HeartBeat",
+							"raw": "{{url}}/administrationservice/v1/Health/HeartBeat",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
+								"administrationservice",
 								"v1",
 								"Health",
 								"HeartBeat"
@@ -109,11 +110,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/v1/Funder/Create",
+									"raw": "{{url}}/administrationservice/v1/Funder/Create",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"administrationservice",
 										"v1",
 										"Funder",
 										"Create"
@@ -151,11 +153,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Funder/Read?FunderId={{funderId}}",
+									"raw": "{{url}}/administrationservice/v1/Funder/Read?FunderId={{funderId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"administrationservice",
 										"v1",
 										"Funder",
 										"Read"
@@ -199,11 +202,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Funder/ReadAll",
+									"raw": "{{url}}/administrationservice/v1/Funder/ReadAll",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"administrationservice",
 										"v1",
 										"Funder",
 										"ReadAll"
@@ -241,11 +245,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Funder/Search?Keyword=string&Page=1&PageSize=10",
+									"raw": "{{url}}/administrationservice/v1/Funder/Search?Keyword=string&Page=1&PageSize=10",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"administrationservice",
 										"v1",
 										"Funder",
 										"Search"
@@ -315,11 +320,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/v1/Funder/Update?FunderId={{funderId}}",
+									"raw": "{{url}}/administrationservice/v1/Funder/Update?FunderId={{funderId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"administrationservice",
 										"v1",
 										"Funder",
 										"Update"
@@ -363,11 +369,12 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Funder/Disable?FunderId={{funderId}}",
+									"raw": "{{url}}/administrationservice/v1/Funder/Disable?FunderId={{funderId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"administrationservice",
 										"v1",
 										"Funder",
 										"Disable"
@@ -439,11 +446,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/v1/Lender/Create",
+									"raw": "{{url}}/administrationservice/v1/Lender/Create",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"administrationservice",
 										"v1",
 										"Lender",
 										"Create"
@@ -481,11 +489,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Lender/Read?LenderId={{lenderId}}",
+									"raw": "{{url}}/administrationservice/v1/Lender/Read?LenderId={{lenderId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"administrationservice",
 										"v1",
 										"Lender",
 										"Read"
@@ -529,11 +538,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Lender/ReadAll",
+									"raw": "{{url}}/administrationservice/v1/Lender/ReadAll",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"administrationservice",
 										"v1",
 										"Lender",
 										"ReadAll"
@@ -580,11 +590,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/v1/Lender/Update?LenderId={{lenderId}}",
+									"raw": "{{url}}/administrationservice/v1/Lender/Update?LenderId={{lenderId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"administrationservice",
 										"v1",
 										"Lender",
 										"Update"
@@ -628,11 +639,12 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Lender/Delete?LenderId={{lenderId}}",
+									"raw": "{{url}}/administrationservice/v1/Lender/Delete?LenderId={{lenderId}}",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"administrationservice",
 										"v1",
 										"Lender",
 										"Delete"
@@ -676,11 +688,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/v1/Lender/Search?Keyword=a&Page=1&PageSize=10",
+									"raw": "{{url}}/administrationservice/v1/Lender/Search?Keyword=a&Page=1&PageSize=10",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
+										"administrationservice",
 										"v1",
 										"Lender",
 										"Search"
