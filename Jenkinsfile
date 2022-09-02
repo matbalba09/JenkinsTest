@@ -23,22 +23,6 @@ pipeline {
 //             }   
 //         }
         
-//         stage('AdminService Test') {
-//             steps {
-//                 bat 'newman run AdminService/RegressionTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./newman/adminService_report.html'
-                
-//                 publishHTML (target: [
-//                     allowMissing: false, 
-//                     alwaysLinkToLastBuild: true, 
-//                     keepAll: false, 
-//                     reportDir: 'C:\\Users\\Mat\\.jenkins\\workspace\\tman_Test_Github_Pipeline3_dev_2\\newman', 
-//                     reportFiles: 'adminService_report.html', 
-//                     reportName: 'adminService Newman HTML Report', 
-//                     reportTitles: ''
-//                 ])
-//             }
-//         }
-        
         stage('DocStoreService Test') {
             steps {
 //                 bat 'newman run DocStoreService/RegressionTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json --disable-unicode -r htmlextra'
@@ -56,14 +40,10 @@ pipeline {
             }
         }
         
-//         stage('AdminService Test') {
-//             steps {
-//                 bat 'newman run AdminService/NewmanTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json'
-//             }
-//         }
         
 //         stage('AdminService Test') {
 //             steps {
+//                 bat 'newman run AdminService/NewmanTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json --disable-unicode -r htmlextra'
 //                 bat 'newman run AdminService/NewmanTest.postman_collection.json -e AdminService/env/DevApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./newman/report.html'
                 
 //                 publishHTML (target: [
@@ -77,11 +57,6 @@ pipeline {
 //                 ])
 //             }
 //         }
-        
-//     	stage('DocStoreService Test') {
-//             steps {
-//                 bat 'newman run DocStoreService/RegressionTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json --disable-unicode'
-//             }
-//         }
+
     }
 }
