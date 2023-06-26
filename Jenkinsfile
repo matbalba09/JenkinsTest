@@ -1,6 +1,5 @@
 pipeline {
-
-    echo "Current branch: ${env.BRANCH_NAME}"
+    
     agent any
     
     stages {
