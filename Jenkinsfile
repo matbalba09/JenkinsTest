@@ -23,7 +23,7 @@ pipeline {
 //             }   
 //         }
         
-        stage('DocStoreService Test') {
+        stage('DocStoreService Dev') {
             when {
                 branch 'dev'
             }
@@ -44,7 +44,7 @@ pipeline {
             }
         }
 
-        stage('DocStoreService Test') {
+        stage('DocStoreService Staging') {
             when {
                 branch 'staging'
             }
