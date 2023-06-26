@@ -53,7 +53,7 @@ pipeline {
                     allowMissing: false, 
                     alwaysLinkToLastBuild: true, 
                     keepAll: false, 
-                    reportDir: 'C:\\Users\\Mat\\.jenkins\\workspace\\newmanTestDev\\newman', 
+                    reportDir: 'C:\\Users\\Mat\\.jenkins\\workspace\\tman_Test_Github_Pipeline3_dev_2\\newman', 
                     reportFiles: 'report.html', 
                     reportName: 'Newman HTML Report', 
                     reportTitles: ''
@@ -94,7 +94,7 @@ pipeline {
 //                     allowMissing: false, 
 //                     alwaysLinkToLastBuild: true, 
 //                     keepAll: false, 
-//                     reportDir: 'C:\\Users\\Mat\\.jenkins\\workspace\\newmanTestStg\\newman', 
+//                     reportDir: 'C:\\Users\\Mat\\.jenkins\\workspace\\tman_Test_Github_Pipeline3_dev_2\\newman', 
 //                     reportFiles: 'report.html', 
 //                     reportName: 'Newman HTML Report', 
 //                     reportTitles: ''
