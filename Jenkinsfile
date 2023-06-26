@@ -22,47 +22,73 @@ pipeline {
 //                 bat 'npm install newman'
 //             }   
 //         }
+
+        stage('Example') {
+            steps {
+                script {
+                    def branchName = env.BRANCH_NAME
+                    def variableValue
+                    
+                    // Set variable value based on branch
+                    if (branchName == 'dev') {
+                        variableValue = 'DocStoreService/env/DevApi.postman_environment.json'
+                    } else if (branchName == 'staging') {
+                        variableValue = 'DocStoreService/env/StgApi.postman_environment.json'
+                    } else if (branchName == 'main') {
+                        variableValue = 'main-value'
+                    } else {
+                        error("Invalid branch: $branchName")
+                    }
+                    
+                    // Set environment variable
+                    env.MY_VARIABLE = variableValue
+                    // Use the variable in your build steps
+                    echo "Branch: $branchName"
+                    echo "Variable value: $variableValue"
+                }
+            }
+        }
         
-        stage('DocStoreService Dev') {
-            when {
-                branch 'dev'
-            }
-            steps {
-//                 bat 'newman run DocStoreService/RegressionTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json --disable-unicode -r htmlextra'
-                bat 'newman run DocStoreService/NewmanTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json  -r htmlextra --reporter-htmlextra-export ./newman/report.html'
+//         stage('DocStoreService Dev') {
+//             when {
+//                 branch 'dev'
+//             }
+//             steps {
+// //                 bat 'newman run DocStoreService/RegressionTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json --disable-unicode -r htmlextra'
+//                 bat 'newman run DocStoreService/NewmanTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json  -r htmlextra --reporter-htmlextra-export ./newman/report.html'
 
-                publishHTML (target: [
-                    allowMissing: false, 
-                    alwaysLinkToLastBuild: true, 
-                    keepAll: false, 
-                    reportDir: 'C:\\Users\\Mat\\.jenkins\\workspace\\newmanTestDev\\newman', 
-                    reportFiles: 'report.html', 
-                    reportName: 'Newman HTML Report', 
-                    reportTitles: ''
-                ])
-            }
-        }
+//                 publishHTML (target: [
+//                     allowMissing: false, 
+//                     alwaysLinkToLastBuild: true, 
+//                     keepAll: false, 
+//                     reportDir: 'C:\\Users\\Mat\\.jenkins\\workspace\\newmanTestDev\\newman', 
+//                     reportFiles: 'report.html', 
+//                     reportName: 'Newman HTML Report', 
+//                     reportTitles: ''
+//                 ])
+//             }
+//         }
 
-        stage('DocStoreService Staging') {
-            when {
-                branch 'staging'
-            }
+//         stage('DocStoreService Staging') {
+//             when {
+//                 branch 'staging'
+//             }
             
-            steps {
-//                 bat 'newman run DocStoreService/RegressionTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json --disable-unicode -r htmlextra'
-                bat 'newman run DocStoreService/NewmanTest.postman_collection.json -e DocStoreService/env/StgApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./newman/report.html'
+//             steps {
+// //                 bat 'newman run DocStoreService/RegressionTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json --disable-unicode -r htmlextra'
+//                 bat 'newman run DocStoreService/NewmanTest.postman_collection.json -e DocStoreService/env/StgApi.postman_environment.json -r htmlextra --reporter-htmlextra-export ./newman/report.html'
 
-                publishHTML (target: [
-                    allowMissing: false, 
-                    alwaysLinkToLastBuild: true, 
-                    keepAll: false, 
-                    reportDir: 'C:\\Users\\Mat\\.jenkins\\workspace\\newmanTestStg\\newman', 
-                    reportFiles: 'report.html', 
-                    reportName: 'Newman HTML Report', 
-                    reportTitles: ''
-                ])
-            }
-        }
+//                 publishHTML (target: [
+//                     allowMissing: false, 
+//                     alwaysLinkToLastBuild: true, 
+//                     keepAll: false, 
+//                     reportDir: 'C:\\Users\\Mat\\.jenkins\\workspace\\newmanTestStg\\newman', 
+//                     reportFiles: 'report.html', 
+//                     reportName: 'Newman HTML Report', 
+//                     reportTitles: ''
+//                 ])
+//             }
+//         }
         
         
 //         stage('AdminService Test') {
