@@ -46,6 +46,18 @@ pipeline {
                     echo "Branch: $branchName"
                     echo "Variable value: $variableValue"
                 }
+                
+                bat 'newman run DocStoreService/NewmanTest.postman_collection.json -e $variableValue  -r htmlextra --reporter-htmlextra-export ./newman/report.html'
+
+                publishHTML (target: [
+                    allowMissing: false, 
+                    alwaysLinkToLastBuild: true, 
+                    keepAll: false, 
+                    reportDir: 'C:\\Users\\Mat\\.jenkins\\workspace\\newmanTestDev\\newman', 
+                    reportFiles: 'report.html', 
+                    reportName: 'Newman HTML Report', 
+                    reportTitles: ''
+                ])
             }
         }
         
