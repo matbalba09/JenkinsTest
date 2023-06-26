@@ -1,5 +1,3 @@
-echo "Current branch: ${env.BRANCH_NAME}"
-
 pipeline {
     
     agent any
@@ -29,12 +27,9 @@ pipeline {
             when {
                 branch 'dev'
             }
-            environment {
-                MY_ENV = "DocStoreService/env/DevApi.postman_environment.json"
-            }
             steps {
 //                 bat 'newman run DocStoreService/RegressionTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json --disable-unicode -r htmlextra'
-                bat 'newman run DocStoreService/NewmanTest.postman_collection.json -e MY_ENV  -r htmlextra --reporter-htmlextra-export ./newman/report.html'
+                bat 'newman run DocStoreService/NewmanTest.postman_collection.json -e DocStoreService/env/DevApi.postman_environment.json  -r htmlextra --reporter-htmlextra-export ./newman/report.html'
 
                 publishHTML (target: [
                     allowMissing: false, 
