@@ -1,3 +1,5 @@
+echo "Current branch: ${env.BRANCH_NAME}"
+
 pipeline {
     
     agent any
