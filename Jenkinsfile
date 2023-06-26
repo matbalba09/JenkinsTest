@@ -47,7 +47,7 @@ pipeline {
                     echo "Variable value: $variableValue"
                 }
                 
-                bat 'newman run DocStoreService/NewmanTest.postman_collection.json -e MY_VARIABLE  -r htmlextra --reporter-htmlextra-export ./newman/report.html'
+                bat "newman run DocStoreService/NewmanTest.postman_collection.json -e %MY_VARIABLE% -r htmlextra --reporter-htmlextra-export ./newman/report.html"
 
                 publishHTML (target: [
                     allowMissing: false, 
