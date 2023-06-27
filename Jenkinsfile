@@ -36,10 +36,10 @@ pipeline {
                         postmanCollection = 'DocStoreService/NewmanTest.postman_collection.json'
                     } else if (branchName == 'staging') {
                         envValue = 'DocStoreService/env/DevApi.postman_environment.json'
-                        postmanCollection = 'DocStoreService/NewmanTest2.postman2_collection.json'
+                        postmanCollection = 'DocStoreService/NewmanTest2.postman_collection.json'
                     } else if (branchName == 'main') {
                         envValue = 'main-value'
-                        postmanCollection = 'DocStoreService/NewmanTest2.postman2_collection.json'
+                        postmanCollection = 'DocStoreService/NewmanTest2.postman_collection.json'
                     } else {
                         error("Invalid branch: $branchName")
                     }
