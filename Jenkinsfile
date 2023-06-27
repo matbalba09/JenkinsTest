@@ -35,7 +35,7 @@ pipeline {
                         envValue = 'DocStoreService/env/DevApi.postman_environment.json'
                         postmanCollection = 'DocStoreService/NewmanTest.postman_collection.json'
                     } else if (branchName == 'staging') {
-                        envValue = 'DocStoreService/env/StgApi.postman_environment.json'
+                        envValue = 'DocStoreService/env/DevApi.postman_environment.json'
                         postmanCollection = 'DocStoreService/NewmanTest2.postman2_collection.json'
                     } else if (branchName == 'main') {
                         envValue = 'main-value'
