@@ -89,7 +89,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/docstore/v1/Message/Read?messageId={{messageId}}",
+									"raw": "{{url}}/docstore/v1/Message/Read?messageId=1",
 									"host": [
 										"{{url}}"
 									],
@@ -102,7 +102,7 @@
 									"query": [
 										{
 											"key": "messageId",
-											"value": "{{messageId}}"
+											"value": "1"
 										}
 									]
 								}
@@ -215,52 +215,6 @@
 					""
 				]
 			}
-		}
-	],
-	"variable": [
-		{
-			"key": "documentMetaId",
-			"value": ""
-		},
-		{
-			"key": "businessServiceId",
-			"value": ""
-		},
-		{
-			"key": "documentTypeId",
-			"value": ""
-		},
-		{
-			"key": "fileTypeId",
-			"value": ""
-		},
-		{
-			"key": "messageId",
-			"value": ""
-		},
-		{
-			"key": "messageTypeId",
-			"value": ""
-		},
-		{
-			"key": "emmsDocumentId",
-			"value": ""
-		},
-		{
-			"key": "serviceId",
-			"value": ""
-		},
-		{
-			"key": "newDocumentMetaId",
-			"value": ""
-		},
-		{
-			"key": "docReferenceId",
-			"value": ""
-		},
-		{
-			"key": "newDocReferenceId",
-			"value": ""
 		}
 	]
 }
