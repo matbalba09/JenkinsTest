@@ -27,27 +27,33 @@ pipeline {
             steps {
                 script {
                     def branchName = env.BRANCH_NAME
-                    def variableValue
+                    def envValue
+                    def postmanCollection
                     
                     // Set variable value based on branch
                     if (branchName == 'dev') {
-                        variableValue = 'DocStoreService/env/DevApi.postman_environment.json'
+                        envValue = 'DocStoreService/env/DevApi.postman_environment.json'
+                        postmanCollection = 'DocStoreService/NewmanTest.postman_collection.json'
                     } else if (branchName == 'staging') {
-                        variableValue = 'DocStoreService/env/StgApi.postman_environment.json'
+                        envValue = 'DocStoreService/env/StgApi.postman_environment.json'
+                        postmanCollection = 'DocStoreService/NewmanTest2.postman2_collection.json'
                     } else if (branchName == 'main') {
-                        variableValue = 'main-value'
+                        envValue = 'main-value'
+                        postmanCollection = 'DocStoreService/NewmanTest2.postman2_collection.json'
                     } else {
                         error("Invalid branch: $branchName")
                     }
                     
                     // Set environment variable
-                    env.MY_VARIABLE = variableValue
+                    env.MY_ENV = envValue
+                    env.MY_POSTMAN = postmanCollection
                     // Use the variable in your build steps
                     echo "Branch: $branchName"
-                    echo "Variable value: $variableValue"
+                    echo "Env value: $envValue"
+                    echo "Postman Collection value: $postmanCollection"
                 }
                 
-                bat "newman run DocStoreService/NewmanTest.postman_collection.json -e %MY_VARIABLE% -r htmlextra --reporter-htmlextra-export ./newman/report.html"
+                bat "newman run %MY_POSTMAN% -e %MY_ENV% -r htmlextra --reporter-htmlextra-export ./newman/report.html"
                 
                 publishHTML (target: [
                     allowMissing: false, 

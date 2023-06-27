@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "34c3830a-0cb0-4b7d-a7be-e4d7b8c1f7ac",
+		"name": "DocStoreService NewmanTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14608331"
+	},
+	"item": [
+		{
+			"name": "SmokeTest",
+			"item": [
+				{
+					"name": "Heartbeat",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/docstore/v1/Health/Heartbeat",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"docstore",
+								"v1",
+								"Health",
+								"Heartbeat"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "RegressionTest",
+			"item": [
+				{
+					"name": "Message",
+					"item": [
+						{
+							"name": "Message/Read",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/docstore/v1/Message/Read?messageId={{messageId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"docstore",
+										"v1",
+										"Message",
+										"Read"
+									],
+									"query": [
+										{
+											"key": "messageId",
+											"value": "{{messageId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Message/ReadAll",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"  pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/docstore/v1/Message/ReadAll",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"docstore",
+										"v1",
+										"Message",
+										"ReadAll"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "documentMetaId",
+			"value": ""
+		},
+		{
+			"key": "businessServiceId",
+			"value": ""
+		},
+		{
+			"key": "documentTypeId",
+			"value": ""
+		},
+		{
+			"key": "fileTypeId",
+			"value": ""
+		},
+		{
+			"key": "messageId",
+			"value": ""
+		},
+		{
+			"key": "messageTypeId",
+			"value": ""
+		},
+		{
+			"key": "emmsDocumentId",
+			"value": ""
+		},
+		{
+			"key": "serviceId",
+			"value": ""
+		},
+		{
+			"key": "newDocumentMetaId",
+			"value": ""
+		},
+		{
+			"key": "docReferenceId",
+			"value": ""
+		},
+		{
+			"key": "newDocReferenceId",
+			"value": ""
+		}
+	]
+}
